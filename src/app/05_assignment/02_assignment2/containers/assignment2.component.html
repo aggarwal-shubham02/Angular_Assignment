@@ -8,14 +8,14 @@
   </ul>
   <div class="container your-code">
     <!-- <h6>Remove this &lt;h3&gt; and create your HTML here</h6> -->
-     <table cellpadding="10" border="1" align="centre">
+     <table id="tab" cellpadding="10" border="1" >
       <tr>
         <th>Id</th>
         <th>Type</th>
         <th>Description</th>
         <th>Completed</th>
       </tr>
-      <tr *ngFor="let obj of todo">
+      <tr *ngFor="let obj of todo; let i = index" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
         <td>{{obj.id}}</td>
         <td>{{obj.type}}</td>
         <td>{{obj.description}}</td>

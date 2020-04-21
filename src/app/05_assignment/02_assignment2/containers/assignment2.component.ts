@@ -9,5 +9,12 @@ import { Todo } from 'src/app/03_pipes/models/todo.interface';
 export class Assignment2Component {
   @Input()
   todo:Todo[]; 
+  selectedRow : Number;
+  setClickedRow : Function;
+  constructor(){
+    this.setClickedRow = function(index){
+      this.selectedRow = index;
+   }
+  }
   
 }
